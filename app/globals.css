@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brand palette from brochure (web-safe approximations)
+   primary: deep navy (headings, key UI)
+   highlight: vibrant orange (CTAs, dividers)
+   accent: refined gold (badges, subtle emphasis)
+   body/muted: readable slate nav/body text
+   surfaces: white + very light tint
+*/
+:root {
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+
+  /* Core colors */
+  --color-primary: #151C6A;     /* deep navy */
+  --color-highlight: #FF7A00;   /* vibrant orange */
+  --color-accent: #C6A34F;      /* refined gold */
+  --color-plum: #7E1B4B;        /* plum/magenta from brochure headings */
+  --color-plum-700: #5E1438;    /* darker plum for emphasis */
+  --color-purple-1: #1C214E;    /* deep indigo (vision bg start) */
+  --color-purple-2: #612B74;    /* purple (vision bg mid) */
+  --color-purple-3: #9A2E62;    /* magenta (vision bg end) */
+  --color-body: #0F172A;        /* slate-900 for body copy */
+  --color-muted: #475569;       /* slate-600 for secondary text */
+
+  /* Surfaces */
+  --color-surface: #FFFFFF;     /* base surface */
+  --color-surface-2: #F5F7FB;   /* very light blue-tint background */
+  --color-soft: #FAFBFE;        /* extra soft surface for sections */
+
+  /* States */
+  --color-primary-hover: #0F154F;   /* darker navy for hover */
+  --color-highlight-hover: #E66400; /* orange hover (from your snippet) */
+
+  /* Shadows */
+  --shadow-subtle: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+html, body, :root {
+  height: 100%;
+}
+
+body {
+  @apply antialiased;
+  background: var(--color-surface);
+  color: var(--color-body);
+}
+
+/* Layout helpers */
+.container-default {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section {
+  @apply py-16 sm:py-20 lg:py-28;
+}
+
+/* Type scale */
+.h1 {
+  @apply text-4xl sm:text-5xl lg:text-6xl leading-tight;
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+}
+.h2 {
+  @apply text-3xl sm:text-4xl lg:text-5xl;
+  font-family: var(--font-heading);
+  color: var(--color-body);
+}
+.p-large {
+  @apply text-lg sm:text-xl;
+  color: color-mix(in oklab, var(--color-body) 80%, white);
+}
+
+/* Buttons */
+.button-primary {
+  @apply inline-flex items-center gap-2 rounded-full text-white px-6 py-3 font-medium transition-colors;
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow-subtle);
+}
+.button-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.button-accent {
+  @apply inline-flex items-center gap-2 rounded-full text-white px-6 py-3 font-medium transition-colors;
+  background-color: var(--color-highlight);
+  box-shadow: var(--shadow-subtle);
+}
+.button-accent:hover {
+  background-color: var(--color-highlight-hover);
+}
+
+/* Badges and decorative elements */
+.badge-gold {
+  @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-medium;
+  background-color: color-mix(in oklab, var(--color-accent) 10%, white);
+  color: var(--color-accent);
+}
+
+.divider {
+  @apply h-1 w-24 rounded-full;
+  background-color: var(--color-highlight);
+}
+
+/* Tailwind-compatible utility aliases for the palette
+   (so existing classes like text-body, bg-primary, etc. work)
+*/
+@layer utilities {
+  .text-body { color: var(--color-body); }
+  
+  .text-muted { color: var(--color-muted); }
+  .text-primary { color: var(--color-primary); }
+  .text-plum { color: var(--color-plum); }
+  .text-highlight { color: var(--color-highlight); }
+  .text-accent { color: var(--color-accent); }
+
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-highlight { background-color: var(--color-highlight); }
+  .bg-accent { background-color: var(--color-accent); }
+  .bg-surface { background-color: var(--color-surface); }
+  .bg-surface-2 { background-color: var(--color-surface-2); }
+  .bg-soft { background-color: var(--color-soft); }
+
+  .border-primary { border-color: var(--color-primary); }
+  .border-highlight { border-color: var(--color-highlight); }
+  .border-accent { border-color: var(--color-accent); }
+  .border-plum { border-color: var(--color-plum); }
+
+  .ring-primary { --tw-ring-color: var(--color-primary); }
+  .ring-highlight { --tw-ring-color: var(--color-highlight); }
+  .ring-accent { --tw-ring-color: var(--color-accent); }
+  .ring-plum { --tw-ring-color: var(--color-plum); }
+
+  .shadow-subtle { box-shadow: var(--shadow-subtle); }
+
+  /* Brand gradients inspired by brochure */
+  .bg-gradient-brand {
+    background-image: linear-gradient(135deg, var(--color-purple-1), var(--color-purple-2) 50%, var(--color-purple-3));
+  }
+  .bg-gradient-vision {
+    background-image: radial-gradient(80% 120% at 10% 10%, rgba(255,255,255,0.08), transparent 50%),
+                      linear-gradient(160deg, #0d1533, #2a2f72 45%, #5b2c83 80%);
+  }
+  .bg-diagonal-corner {
+    background-image: linear-gradient(130deg, rgba(255,255,255,0) 60%, rgba(126,27,75,0.08) 60%),
+                      linear-gradient(310deg, rgba(255,122,0,0.06), rgba(97,43,116,0.06));
+  }
+
+  /* Utility: chevron clip-path for decorative shapes */
+  .clip-path-chevron {
+    clip-path: polygon(0% 0%, 70% 0%, 100% 50%, 70% 100%, 0% 100%, 30% 50%);
+  }
+
+  /* Right-pointing chevron used in Services dark panel */
+  .clip-right-chevron {
+    clip-path: polygon(0 0, 65% 0, 100% 50%, 65% 100%, 0 100%);
+  }
+}
+
+/* Optional cards/surfaces */
+.card {
+  @apply rounded-2xl border border-gray-100;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-subtle);
+}
