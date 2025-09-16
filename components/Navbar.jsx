@@ -1,59 +1,105 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/about-us", label: "About" },
+    { href: "/our-offerings", label: "Services" },
+    { href: "/clients", label: "Clients" },
+    { href: "/contact-us", label: "Contact" },
+  ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-100 box-shadow-bottom-lg">
-      <div className="w-full bg-highlight/80"></div>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-white"
+      }`}>
+      {/* Top accent bar */}
+      <div className="h-1 bg-gradient-to-r from-primary via-plum to-highlight" />
 
-      <div className="ml-auto ontainer w-screen flex items-center justify-between py-4">
-        <Link href="/" className="flex items-center gap-3 lg:ml-20 ml-10">
-          <div className="h-9 w-9 rounded-none bg-white grid place-items-center text-white font-bold p-0 scale-[1.9]">
-            <img src="/images/logo.jpg" alt="movingworld.in" />
-          </div>
-        </Link>
+      <div className="container-default">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative">
+              <div className="h-12 w-12 lg:h-12 lg:w-12 rounded-none bg-white overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                <img
+                  src="/images/logo-transparent.png"
+                  alt="Moving World"
+                  className="w-full h-full object-contain bg-white scale-110"
+                />
+              </div>
+            </div>
+            <div className="hidden sm:block">
+              <span className="font-heading text-xl lg:text-2xl font-bold text-primary">Moving World</span>
+            </div>
+          </Link>
 
-        <nav className="hidden lg:flex items-center gap-8 text-muted align-right mr-20">
-          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-          <Link href="/about-us" className="hover:text-primary transition-colors">About Us</Link>
-          <Link href="/our-offerings" className="hover:text-primary transition-colors">Our Offerings</Link>
-          <Link href="/speakers" className="hover:text-primary transition-colors">Speakers</Link>
-          <Link href="/clients" className="hover:text-primary transition-colors">Clients</Link>
-          <Link href="/sanjeevani" className="hover:text-primary transition-colors">Sanjeevani</Link>
-          <Link href="/contact-us" className="hover:text-primary transition-colors">Contact Us</Link>
-        </nav>
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group text-muted hover:text-primary hover:bg-primary/5"
+              >
+                {item.label}
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary/10 to-plum/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+            ))}
+          </nav>
 
-        <button
-          onClick={() => setOpen(!open)}
-          className="lg:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg border border-gray-200 mr-5"
-          aria-label="Toggle menu"
-        >
-          <span className="sr-only">Menu</span>
-          <div className="space-y-1.5">
-            <span className="block h-0.5 w-5 bg-primary"></span>
-            <span className="block h-0.5 w-5 bg-primary"></span>
-            <span className="block h-0.5 w-5 bg-primary"></span>
-          </div>
-        </button>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden relative h-10 w-10 rounded-lg border border-gray-200 bg-white/80 backdrop-blur-sm group"
+            aria-label="Toggle navigation"
+          >
+            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary/10 to-plum/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative flex flex-col items-center justify-center space-y-1.5">
+              <span className={`block h-0.5 w-4 bg-primary transition-all duration-300 ${isOpen ? "rotate-45 translate-y-2" : ""
+                }`} />
+              <span className={`block h-0.5 w-4 bg-primary transition-all duration-300 ${isOpen ? "opacity-0" : ""
+                }`} />
+              <span className={`block h-0.5 w-4 bg-primary transition-all duration-300 ${isOpen ? "-rotate-45 -translate-y-2" : ""
+                }`} />
+            </div>
+          </button>
+        </div>
       </div>
 
-      {open && (
-        <div className="lg:hidden border-t border-gray-100 bg-white/95">
-          <div className="container-default py-3 grid gap-2 text-body">
-            <Link href="/" onClick={() => setOpen(false)} className="py-2 hover:text-primary transition-colors">Home</Link>
-            <Link href="/about-us" onClick={() => setOpen(false)} className="py-2 hover:text-primary transition-colors">About Us</Link>
-            <Link href="/our-offerings" onClick={() => setOpen(false)} className="py-2 hover:text-primary transition-colors">Our Offerings</Link>
-            <Link href="/speakers" onClick={() => setOpen(false)} className="py-2 hover:text-primary transition-colors">Speakers</Link>
-            <Link href="/clients" onClick={() => setOpen(false)} className="py-2 hover:text-primary transition-colors">Clients</Link>
-            <Link href="/sanjeevani" onClick={() => setOpen(false)} className="py-2 hover:text-primary transition-colors">Sanjeevani</Link>
-            <Link href="/contact-us" onClick={() => setOpen(false)} className="py-2 hover:text-primary transition-colors">Contact Us</Link>
+      {/* Mobile Menu */}
+      <div className={`lg:hidden absolute top-full left-0 right-0 z-40 transition-all duration-300 ease-out ${isOpen
+        ? "opacity-100 visible translate-y-0"
+        : "opacity-0 invisible -translate-y-4"
+        }`}>
+        <div className="bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-xl">
+          <div className="container-default py-6">
+            <nav className="space-y-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 text-muted hover:text-primary hover:bg-primary/5"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }
