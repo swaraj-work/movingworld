@@ -92,16 +92,15 @@ export default function Services() {
       <div className="relative container-default">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+          {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             Our Services
-          </div>
+          </div> */}
 
           <h2 className="h2 text-primary mb-6">
-            Comprehensive Solutions for
-            <span className="text-plum block">Your Brand Journey</span>
+            <span className="text-plum block">Our Service</span>
           </h2>
 
           <p className="text-lg text-body/80 leading-relaxed">

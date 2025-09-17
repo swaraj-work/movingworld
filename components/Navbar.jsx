@@ -28,7 +28,7 @@ export default function Navbar() {
       {/* Top accent bar */}
       <div className="h-1 bg-gradient-to-r from-primary via-plum to-highlight" />
 
-      <div className="container-default w-screen">
+      <div className="container-default">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">

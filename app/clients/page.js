@@ -1,40 +1,119 @@
 export default function ClientsPage() {
   const clients = [
+    // International & Development
     {
       name: "German Cooperation",
       logo: "/clients/german-coop.png",
-      description: "Deutsche Zusammenarbeit - Strategic partnerships in international development",
+      description: "Deutsche Zusammenarbeit – Strategic partnerships in international development.",
       category: "International Development"
     },
     {
       name: "GIZ",
       logo: "/clients/giz.png",
-      description: "Deutsche Gesellschaft für Internationale Zusammenarbeit - Global development cooperation",
+      description: "Deutsche Gesellschaft für Internationale Zusammenarbeit – Global development cooperation.",
       category: "Development Agency"
+    },
+    {
+      name: "GSF",
+      logo: "/clients/gsf.png",
+      description: "Global Sustainability Forum – Advocacy and sustainability initiatives.",
+      category: "Sustainability"
     },
     {
       name: "SDPA",
       logo: "/clients/sdpa.png",
-      description: "Social Development & People's Action - Community empowerment initiatives",
+      description: "Social Development & People's Action – Community empowerment initiatives.",
       category: "Social Development"
     },
     {
+      name: "Samarth Bihar",
+      logo: "/clients/samarth-bihar.png",
+      description: "State-led capacity development and social impact programs.",
+      category: "Govt. & Social Impact"
+    },
+    {
+      name: "Gaon Jawar",
+      logo: "/clients/gaon-jawar.png",
+      description: "Grassroots rural development and capacity-building platform.",
+      category: "Rural Development"
+    },
+
+    // Culture & Institutions
+    {
       name: "NMNH",
       logo: "/clients/nmnh.png",
-      description: "National Museum of Natural History - Cultural and educational experiences",
+      description: "National Museum of Natural History – Cultural and educational experiences.",
       category: "Cultural Institution"
     },
     {
+      name: "Nature Protects",
+      logo: "/clients/nature-protects.jpg",
+      description: "Conservation awareness and environmental education initiatives.",
+      category: "Environment"
+    },
+
+    // Professional & Research Associations
+    {
       name: "SIRS",
       logo: "/clients/sirs.png",
-      description: "Society for Information Research & Studies - Research and information services",
+      description: "Society for Information Research & Studies – Research and information services.",
       category: "Research Organization"
     },
     {
       name: "LPA",
       logo: "/clients/lpa.png",
-      description: "Library Professionals Association - Educational and professional development",
+      description: "Library Professionals Association – Educational and professional development.",
       category: "Professional Association"
+    },
+
+    // Publishing & Knowledge
+    {
+      name: "Elsevier",
+      logo: "/clients/elsevier.jpg",
+      description: "Global information analytics for scientific research and health.",
+      category: "Publishing"
+    },
+    {
+      name: "Wiley",
+      logo: "/clients/wiley.png",
+      description: "Global research and learning company enabling discovery.",
+      category: "Publishing"
+    },
+    {
+      name: "Wolters Kluwer",
+      logo: "/clients/wolters-kluwer.jpg",
+      description: "Global leader in professional information and software solutions.",
+      category: "Publishing"
+    },
+    {
+      name: "SAGE Publishing",
+      logo: "/clients/sage-publishing.png",
+      description: "Independent academic publisher of books, journals, and digital media.",
+      category: "Publishing"
+    },
+    {
+      name: "BMJ",
+      logo: "/clients/bmj.png",
+      description: "Global healthcare knowledge provider and medical publisher.",
+      category: "Publishing"
+    },
+    {
+      name: "Bentham Science",
+      logo: "/clients/bentham-science.png",
+      description: "Publisher of scientific, technical, and medical research.",
+      category: "Publishing"
+    },
+    {
+      name: "EBSCO",
+      logo: "/clients/ebsco.png",
+      description: "Leading provider of research databases, e-journals, and discovery services.",
+      category: "Information Services"
+    },
+    {
+      name: "TERI",
+      logo: "/clients/teri.jpg",
+      description: "The Energy and Resources Institute – Research in energy, environment, and sustainability.",
+      category: "Research Institute"
     }
   ];
 

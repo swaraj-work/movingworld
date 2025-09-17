@@ -47,7 +47,7 @@ export default function Carousel({ images = [], interval = 4000, className = "" 
             <img
               src={src}
               alt={`Brand experience showcase ${i + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
               loading={i === 0 ? "eager" : "lazy"}
             />
             {/* Overlay for better text readability */}

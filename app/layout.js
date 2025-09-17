@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/images/favicon.png"/>
       </head>
-      <body className={`${playfair.variable} ${inter.variable} w-screen`}>
+      <body className={`${playfair.variable} ${inter.variable}`}>
         <Navbar />
         {children}
         <Footer />

@@ -52,12 +52,15 @@ export default function OurTeamPage() {
             <section className="relative top-10 overflow-hidden bg-soft text-body overflow-x-hidden overflow-y-visible">
                 <div className="container-default section">
                     <div className="max-w-3xl">
-                        <div className="badge-gold mb-5 text-accent bg-white/10">
+                        {/* <div className="badge-gold mb-5 text-accent bg-white/10">
                             Leadership Team Details
                         </div>
                         <h1 className="h1 text-primary">
                             People behind the
                             <span className="block gradient-text py-2">Moving World</span>
+                        </h1> */}
+                        <h1 className="h1 text-primary">
+                            <span className="block gradient-text py-2">Leadership Team Details</span>
                         </h1>
                         <p className="p-large text-body/80 mt-4 max-w-2xl">
                             A multidisciplinary team blending strategy, creativity, and
@@ -116,38 +119,6 @@ export default function OurTeamPage() {
                                                     <p key={i} className="text-sm sm:text-base">{para}</p>
                                                 ))}
                                             </div>
-
-                                            {/* <div className="mt-6 flex flex-wrap items-center gap-3">
-                                                <a
-                                                    href={`tel:${member.phone.replace(/\s+/g, '')}`}
-                                                    className="button-primary button-smooth focus-ring"
-                                                    aria-label={`Call ${member.name}`}
-                                                >
-                                                    Call
-                                                    <svg
-                                                        className="w-4 h-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        stroke="currentColor"
-                                                        strokeWidth="2"
-                                                    >
-                                                        <path
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            d="M3 5a2 2 0 012-2h3l2 4-3 3a16 16 0 007 7l3-3 4 2v3a2 2 0 01-2 2h-1C8.82 22 2 15.18 2 6V5z"
-                                                        />
-                                                    </svg>
-                                                </a>
-                                                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm">
-                                                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618V15.5a1 1 0 01-1.447.894L15 14" />
-                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h8M4 10h8M4 14h6" />
-                                                    </svg>
-                                                    Strategy • Media • Culture
-                                                </span>
-                                            </div> */}
-
-
                                             <div className="mt-6 space-y-4">
                                                 {/* Contact Information */}
                                                 <div className="flex flex-wrap items-center gap-4">

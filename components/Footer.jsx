@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="relative bg-white border-t border-gray-100 overflow-hidden">
+    <footer className="relative bg-gray-100 border-t border-gray-100 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-primary/5 to-transparent rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-highlight/5 to-transparent rounded-full blur-3xl" />
@@ -12,8 +12,8 @@ export default function Footer() {
             {/* Brand Section */}
             <div className="lg:pr-8">
               <div className="flex items-center gap-4 mb-6">
-                <div className="h-16 w-16 rounded-none bg-white overflow-hidden">
-                  <img src="/images/logo-transparent.png" alt="Moving World" className="w-full h-full object-contain bg-white scale-110" />
+                <div className="h-16 w-16 rounded-none bg-transparent overflow-hidden">
+                  <img src="/images/logo-transparent.png" alt="Moving World" className="w-full h-full object-contain bg-gray-100 scale-110" />
                 </div>
                 <div>
                   <span className="font-heading text-2xl font-bold text-primary">Moving World</span>
