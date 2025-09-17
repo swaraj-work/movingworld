@@ -1,6 +1,3 @@
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-
 export default function ClientsPage() {
   const clients = [
     {
@@ -43,7 +40,6 @@ export default function ClientsPage() {
 
   return (
     <main className="min-h-screen">
-      <Navbar />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-20 pb-16 bg-gradient-to-br from-soft via-white to-surface-2">
@@ -151,73 +147,6 @@ export default function ClientsPage() {
           </div>
         </div>
       </section>
-
-      {/* Testimonial Section */}
-      <section className="section bg-white">
-        <div className="container-default">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-highlight/10 text-highlight text-sm font-medium mb-8">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clipRule="evenodd" />
-              </svg>
-              Client Testimonial
-            </div>
-
-            <blockquote className="text-2xl lg:text-3xl font-medium text-body leading-relaxed mb-8">
-              "Moving World transformed our brand presence with their innovative approach and
-              deep understanding of our mission. Their team delivered exceptional results that
-              exceeded our expectations."
-            </blockquote>
-
-            <div className="flex items-center justify-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-plum flex items-center justify-center text-white font-bold">
-                MW
-              </div>
-              <div className="text-left">
-                <div className="font-semibold text-primary">Michael Weber</div>
-                <div className="text-sm text-body/70">Director, International Development</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      {/* <section className="section bg-gradient-brand relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
-        
-        <div className="relative container-default text-center text-white">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-            Ready to Join Our
-            <span className="block">Success Stories?</span>
-          </h2>
-          
-          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-            Let's create something extraordinary together. Partner with Moving World 
-            to transform your brand experience.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="/contact-us" 
-              className="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition-colors inline-flex items-center justify-center gap-2"
-            >
-              Start Your Project
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-            <a 
-              href="/our-offerings" 
-              className="border-2 border-white/30 text-white px-8 py-4 rounded-full font-medium hover:bg-white/10 transition-all"
-            >
-              View Our Services
-            </a>
-          </div>
-        </div>
-      </section> */}
-
-      <Footer />
     </main>
   );
 }

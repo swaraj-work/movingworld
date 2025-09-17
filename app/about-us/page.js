@@ -1,10 +1,6 @@
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-
 export default function AboutUsPage() {
   return (
     <main>
-      <Navbar />
       {/* Header band */}
       <section className="bg-gradient-brand text-white py-16 sm:py-20">
         <div className="container-default">
@@ -26,7 +22,6 @@ export default function AboutUsPage() {
           </div>
         </div>
       </section>
-      <Footer />
     </main>
   );
 }

@@ -185,39 +185,9 @@ export default function Services() {
                   ))}
                 </div>
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/our-offerings" className="button-primary flex-1 text-center">
-                  Learn More
-                </a>
-                <a href="/contact-us" className="border border-primary/20 text-primary px-6 py-3 rounded-full font-medium hover:bg-primary/5 transition-all duration-300 text-center flex-1">
-                  Get Quote
-                </a>
-              </div>
             </div>
           </div>
         </div>
-
-        {/* CTA Section */}
-        {/* <div className="mt-20 text-center">
-          <div className="bg-gradient-brand rounded-3xl p-12 text-white relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
-            <div className="relative max-w-2xl mx-auto">
-              <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Brand?</h3>
-              <p className="text-white/90 mb-8 text-lg">
-                Let's discuss how our comprehensive services can help your brand achieve its full potential.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact-us" className="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition-colors">
-                  Start Your Project
-                </a>
-                <a href="/our-offerings" className="border-2 border-white/30 text-white px-8 py-4 rounded-full font-medium hover:bg-white/10 transition-all">
-                  View Portfolio
-                </a>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </div>
     </section>
   );

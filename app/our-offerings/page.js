@@ -1,10 +1,6 @@
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-
 export default function OurOfferingsPage() {
   return (
     <main>
-      <Navbar />
       <section className="bg-gradient-brand text-white py-16 sm:py-20">
         <div className="container-default">
           <h1 className="text-3xl md:text-5xl font-bold">Our Offerings</h1>
@@ -27,7 +23,6 @@ export default function OurOfferingsPage() {
           </div>
         </div>
       </section>
-      <Footer />
     </main>
   );
 }

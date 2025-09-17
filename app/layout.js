@@ -1,5 +1,7 @@
 import "./globals.css";
 import { Playfair_Display, Inter } from "next/font/google";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-heading" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
@@ -15,8 +17,10 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/images/favicon.png"/>
       </head>
-      <body className={`${playfair.variable} ${inter.variable}`}>
+      <body className={`${playfair.variable} ${inter.variable} w-screen`}>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

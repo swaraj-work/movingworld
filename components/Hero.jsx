@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <>
       {/* Carousel Section */}
-      <section className="relative overflow-hidden pt-20">
+      <section className="relative overflow-hidden lg:pt-20 pt-[4rem]">
         <Carousel
           className="w-full 2xl:h-[40rem] xl:h-[35rem] lg:h-[30rem] md:h-[25rem] sm:h-[20rem]"
           images={[
@@ -17,7 +17,7 @@ export default function Hero() {
       </section>
 
       {/* Hero Content Section */}
-      <section className="section bg-soft relative">
+      {/* <section className="section bg-soft relative">
         <div className="container-default">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
@@ -53,7 +53,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* About Section */}
       <section className="section bg-soft relative">

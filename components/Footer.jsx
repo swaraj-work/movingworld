@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="relative">
         {/* Main Footer Content */}
         <div className="container-default py-16">
-          <div className="w-full grid gap-12 md:gap-8 lg:grid-cols-[1.5fr_1.2fr_1.2fr] mb-12">
+          <div className="w-full grid gap-12 md:gap-8 lg:grid-cols-[1.5fr_1.2fr_1.2fr]">
             {/* Brand Section */}
             <div className="lg:pr-8">
               <div className="flex items-center gap-4 mb-6">
@@ -92,6 +92,12 @@ export default function Footer() {
                       <a href="/about-us" className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
                         <div className="w-1.5 h-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors"></div>
                         About Us
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/our-team" className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors"></div>
+                        Our Team
                       </a>
                     </li>
                     <li>

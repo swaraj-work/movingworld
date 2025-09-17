@@ -17,17 +17,18 @@ export default function Navbar() {
     { href: "/", label: "Home" },
     { href: "/about-us", label: "About" },
     { href: "/our-offerings", label: "Services" },
+    { href: "/our-team", label: "Team" },
     { href: "/clients", label: "Clients" },
     { href: "/contact-us", label: "Contact" },
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-white"
-      }`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-lg ${isScrolled ? "bg-white/95 backdrop-blur-md" : "bg-white"
+      } overflow-x-hidden`}>
       {/* Top accent bar */}
       <div className="h-1 bg-gradient-to-r from-primary via-plum to-highlight" />
 
-      <div className="container-default">
+      <div className="container-default w-screen">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
@@ -79,9 +80,9 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden absolute top-full left-0 right-0 z-40 transition-all duration-300 ease-out ${isOpen
-        ? "opacity-100 visible translate-y-0"
-        : "opacity-0 invisible -translate-y-4"
+      <div className={`lg:hidden transition-all duration-300 ease-in-out ${isOpen
+          ? "max-h-96 opacity-100"
+          : "max-h-0 opacity-0 overflow-hidden"
         }`}>
         <div className="bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-xl">
           <div className="container-default py-6">
