@@ -188,7 +188,8 @@ export default function ClientsPage() {
             {clients.map((client, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-3xl p-8 shadow-subtle border border-gray-100 hover:shadow-xl hover:border-primary/20 transition-all duration-300 hover-lift"
+                className="group bg-white rounded-3xl p-8 shadow-subtle border border-gray-100 hover:shadow-xl hover:border-primary/20 transition-all duration-300 hover-lift animate-fade-in-up"
+                style={{ animationDelay: `${Math.min(index * 80, 600)}ms` }}
               >
                 {/* Logo Container */}
                 <div className="bg-white rounded-2xl p-6 mb-6 h-32 flex items-center justify-center">
