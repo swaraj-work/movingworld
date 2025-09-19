@@ -19,11 +19,12 @@ export default function Navbar() {
     { href: "/our-offerings", label: "Services" },
     { href: "/our-team", label: "Team" },
     { href: "/clients", label: "Clients" },
+    { href: "/gallery", label: "Gallery" },
     { href: "/contact-us", label: "Contact" },
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-lg ${isScrolled ? "bg-white/95 backdrop-blur-md" : "bg-white"
+    <header className={`fixed top-0 left-0 right-0 z-[50] transition-all duration-300 shadow-lg ${isScrolled ? "bg-white/95 backdrop-blur-md" : "bg-white"
       } overflow-x-hidden`}>
       {/* Top accent bar */}
       <div className="h-1 bg-gradient-to-r from-primary via-plum to-highlight" />
@@ -81,7 +82,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div className={`lg:hidden transition-all duration-300 ease-in-out ${isOpen
-          ? "max-h-96 opacity-100"
+          ? "max-h-[26rem] opacity-100"
           : "max-h-0 opacity-0 overflow-hidden"
         }`}>
         <div className="bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-xl">
@@ -92,7 +93,7 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 text-muted hover:text-primary hover:bg-primary/5"
+                  className="block px-4 py-2 text-base font-medium rounded-xl transition-all duration-300 text-muted hover:text-primary hover:bg-primary/5"
                 >
                   {item.label}
                 </Link>

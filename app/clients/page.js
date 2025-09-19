@@ -133,7 +133,7 @@ export default function ClientsPage() {
             <span className="text-sm font-medium text-primary">Trusted Partnerships</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-primary mb-6">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-primary font-heading mb-6">
             Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-highlight to-accent">Clients</span>
           </h1>
 
