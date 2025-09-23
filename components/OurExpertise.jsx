@@ -53,7 +53,7 @@ export default function OurExpertise() {
   ];
 
   return (
-    <section className="section bg-surface relative">
+    <section id="expertise" className="section bg-surface relative">
       <div className="container-default">
         <div className="text-center max-w-4xl mx-auto">
           {/* Section Heading */}

@@ -1,6 +1,6 @@
 export default function AboutUsHome() {
   return (
-    <section className="section bg-surface relative">
+    <section id="about" className="section bg-surface relative">
       <div className="container-default">
         <div className="text-center max-w-4xl mx-auto">
           {/* Section Heading */}

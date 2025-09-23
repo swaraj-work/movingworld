@@ -6,21 +6,149 @@ import Link from "next/link";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+      
+      // Track active section on home page
+      if (window.location.pathname === '/') {
+        const sections = ['#home', '#about', '#services', '#contact'];
+        const scrollPosition = window.scrollY + 100;
+        
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const element = document.querySelector(sections[i]);
+          if (element && element.offsetTop <= scrollPosition) {
+            setActiveSection(sections[i]);
+            break;
+          }
+        }
+      }
+    };
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Handle hash scrolling when component mounts or page loads
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        if (hash === '#home') {
+          // Scroll to top of page
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const element = document.querySelector(hash);
+          if (element) {
+            scrollToElement(element);
+          }
+        }
+      }, 100); // Small delay to ensure page is fully loaded
+    }
+  }, []);
+
+  const isActive = (href) => {
+    // Check if we're on the client side
+    if (typeof window === 'undefined') {
+      return false;
+    }
+    
+    if (href === '/') {
+      return window.location.pathname === '/' && !activeSection;
+    }
+    if (href.startsWith('#')) {
+      return window.location.pathname === '/' && activeSection === href;
+    }
+    return window.location.pathname === href;
+  };
+
+  const scrollToElement = (element) => {
+    // Check if we're on the client side
+    if (typeof window === 'undefined') {
+      return;
+    }
+    
+    // Get the actual navbar height by measuring it
+    const navbar = document.querySelector('header');
+    const navbarHeight = navbar ? navbar.offsetHeight : (window.innerWidth < 1024 ? 80 : 100);
+    
+    // Use scrollIntoView with proper options
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest'
+    });
+    
+    // Then adjust for navbar height
+    setTimeout(() => {
+      const currentScroll = window.pageYOffset;
+      const newScroll = currentScroll - navbarHeight - 20;
+      window.scrollTo({
+        top: Math.max(0, newScroll),
+        behavior: 'smooth'
+      });
+    }, 100);
+  };
+
+  const handleNavClick = (href) => {
+    // Check if we're on the client side
+    if (typeof window === 'undefined') {
+      return;
+    }
+    
+    if (href.startsWith('#')) {
+      // Check if we're on the home page
+      if (window.location.pathname === '/') {
+        // If on home page, just scroll to the section
+        if (href === '#home') {
+          // Scroll to top of page
+          
+          // Update URL hash to #home
+          window.history.pushState(null, null, '#home');
+          
+          // Try multiple scroll methods to ensure it works
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          
+          // Fallback: immediate scroll if smooth doesn't work
+          setTimeout(() => {
+            window.scrollTo(0, 0);
+          }, 100);
+          
+          // Another fallback using document.documentElement
+          setTimeout(() => {
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+          }, 200);
+          
+          setIsOpen(false);
+        } else {
+          const element = document.querySelector(href);
+          if (element) {
+            // Update URL hash to the section
+            window.history.pushState(null, null, href);
+            
+            scrollToElement(element);
+            setIsOpen(false); // Close mobile menu
+          }
+        }
+      } else {
+        // If on another page, navigate to home with hash
+        window.location.href = `/${href}`;
+        setIsOpen(false); // Close mobile menu
+      }
+    }
+  };
+
   const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/about-us", label: "About" },
-    { href: "/our-offerings", label: "Services" },
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#services", label: "Services" },
     { href: "/our-team", label: "Team" },
     { href: "/clients", label: "Clients" },
     { href: "/gallery", label: "Gallery" },
-    { href: "/contact-us", label: "Contact" },
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
@@ -50,14 +178,26 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
-                className="relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group text-muted hover:text-primary hover:bg-primary/5"
+                onClick={(e) => {
+                  if (item.href.startsWith('#')) {
+                    e.preventDefault();
+                    handleNavClick(item.href);
+                  }
+                }}
+                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
+                  isActive(item.href)
+                    ? 'text-primary bg-primary/10 shadow-sm'
+                    : 'text-muted hover:text-primary hover:bg-primary/5'
+                }`}
               >
                 {item.label}
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary/10 to-plum/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Link>
+                <div className={`absolute inset-0 rounded-lg bg-gradient-to-r from-primary/10 to-plum/10 transition-opacity duration-300 ${
+                  isActive(item.href) ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                }`} />
+              </a>
             ))}
           </nav>
 
@@ -89,14 +229,25 @@ export default function Navbar() {
           <div className="container-default py-6">
             <nav className="space-y-2">
               {navItems.map((item) => (
-                <Link
+                <a
                   key={item.href}
                   href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-4 py-2 text-base font-medium rounded-xl transition-all duration-300 text-muted hover:text-primary hover:bg-primary/5"
+                  onClick={(e) => {
+                    if (item.href.startsWith('#')) {
+                      e.preventDefault();
+                      handleNavClick(item.href);
+                    } else {
+                      setIsOpen(false);
+                    }
+                  }}
+                  className={`block px-4 py-2 text-base font-medium rounded-xl transition-all duration-300 ${
+                    isActive(item.href)
+                      ? 'text-primary bg-primary/10 shadow-sm'
+                      : 'text-muted hover:text-primary hover:bg-primary/5'
+                  }`}
                 >
                   {item.label}
-                </Link>
+                </a>
               ))}
             </nav>
           </div>

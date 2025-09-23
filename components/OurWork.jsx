@@ -28,23 +28,23 @@ export default function OurWork() {
 
                     {/* Work Categories */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-                        <div className="flex items-center gap-3 p-4 bg-soft rounded-xl border border-gray-100/50">
+                        <div className="flex items-center gap-3 p-4 bg-surface-2 rounded-xl border border-gray-100/50">
                             <span className="text-2xl">🎬</span>
                             <span className="text-body font-medium">Documentaries on environment and wildlife</span>
                         </div>
-                        <div className="flex items-center gap-3 p-4 bg-soft rounded-xl border border-gray-100/50">
+                        <div className="flex items-center gap-3 p-4 bg-surface-2 rounded-xl border border-gray-100/50">
                             <span className="text-2xl">🎯</span>
                             <span className="text-body font-medium">Strategic campaigns for behaviour change</span>
                         </div>
-                        <div className="flex items-center gap-3 p-4 bg-soft rounded-xl border border-gray-100/50">
+                        <div className="flex items-center gap-3 p-4 bg-surface-2 rounded-xl border border-gray-100/50">
                             <span className="text-2xl">📢</span>
                             <span className="text-body font-medium">National and international brand activations</span>
                         </div>
-                        <div className="flex items-center gap-3 p-4 bg-soft rounded-xl border border-gray-100/50">
+                        <div className="flex items-center gap-3 p-4 bg-surface-2 rounded-xl border border-gray-100/50">
                             <span className="text-2xl">📺</span>
                             <span className="text-body font-medium">TV and radio commercials, print and digital</span>
                         </div>
-                        <div className="flex items-center gap-3 p-4 bg-soft rounded-xl border border-gray-100/50 sm:col-span-2 lg:col-span-1">
+                        <div className="flex items-center gap-3 p-4 bg-surface-2 rounded-xl border border-gray-100/50 sm:col-span-2 lg:col-span-1">
                             <span className="text-2xl">🌱</span>
                             <span className="text-body font-medium">Impactful initiatives like Community Nutrition Gardens</span>
                         </div>

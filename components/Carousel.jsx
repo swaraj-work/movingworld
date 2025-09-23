@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from "react";
 export default function Carousel({ images = [], interval = 4000, className = "" }) {
   const [index, setIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isMdAndAbove, setIsMdAndAbove] = useState(false);
   const timerRef = useRef(null);
 
   useEffect(() => {
@@ -14,6 +15,17 @@ export default function Carousel({ images = [], interval = 4000, className = "" 
     }, interval);
     return () => clearInterval(timerRef.current);
   }, [images.length, interval, isPlaying]);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMdAndAbove(window.innerWidth >= 768);
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const goTo = (i) => {
     setIndex(i % images.length);
@@ -43,11 +55,14 @@ export default function Carousel({ images = [], interval = 4000, className = "" 
         style={{ transform: `translateX(-${index * 100}%)` }}
       >
         {images.map((src, i) => (
-          <div key={i} className="min-w-full h-full relative">
+          <div key={i} className="min-w-full h-full relative overflow-hidden">
             <img
               src={src}
               alt={`Brand experience showcase ${i + 1}`}
-              className="w-full h-full object-center object-cover scale-100"
+              className="inset-0 w-full h-full object-cover"
+              style={{ 
+                objectPosition: isMdAndAbove ? `0vw ${i == 1 ? '-10vh' : '0vh'}` : 'center center'
+              }}
               loading={i === 0 ? "eager" : "lazy"}
             />
             {/* Overlay for better text readability */}
@@ -56,7 +71,7 @@ export default function Carousel({ images = [], interval = 4000, className = "" 
         ))}
       </div>
 
-      {/* Enhanced Controls */}
+      {/* Enhanced Controls */} 
       {images.length > 1 && (
         <>
           <button

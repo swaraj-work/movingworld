@@ -1,4 +1,54 @@
+"use client";
+
 export default function Footer() {
+  const scrollToElement = (element) => {
+    // Get the actual navbar height by measuring it
+    const navbar = document.querySelector('header');
+    const navbarHeight = navbar ? navbar.offsetHeight : (window.innerWidth < 1024 ? 80 : 100);
+    
+    // Use scrollIntoView with proper options
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest'
+    });
+    
+    // Then adjust for navbar height
+    setTimeout(() => {
+      const currentScroll = window.pageYOffset;
+      const newScroll = currentScroll - navbarHeight - 20;
+      window.scrollTo({
+        top: Math.max(0, newScroll),
+        behavior: 'smooth'
+      });
+    }, 100);
+  };
+
+  const handleNavClick = (href) => {
+    if (href.startsWith('#')) {
+      // Check if we're on the home page
+      if (window.location.pathname === '/') {
+        // If on home page, just scroll to the section
+        if (href === '#home') {
+          // Update URL hash to #home
+          window.history.pushState(null, null, '#home');
+          // Scroll to top of page
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const element = document.querySelector(href);
+          if (element) {
+            // Update URL hash to the section
+            window.history.pushState(null, null, href);
+            scrollToElement(element);
+          }
+        }
+      } else {
+        // If on another page, navigate to home with hash
+        window.location.href = `/${href}`;
+      }
+    }
+  };
+
   return (
     <footer className="relative bg-gray-100 border-t border-gray-100 overflow-hidden">
       {/* Background Elements */}
@@ -59,25 +109,25 @@ export default function Footer() {
                   <h5 className="font-semibold text-primary mb-4">Services</h5>
                   <ul className="space-y-3">
                     <li>
-                      <a href="#services" className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
+                      <a href="#services" onClick={(e) => { e.preventDefault(); handleNavClick('#services'); }} className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
                         <div className="w-1.5 h-1.5 rounded-full bg-highlight/60 group-hover:bg-highlight transition-colors"></div>
                         Creative Strategy
                       </a>
                     </li>
                     <li>
-                      <a href="#services" className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
+                      <a href="#services" onClick={(e) => { e.preventDefault(); handleNavClick('#services'); }} className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
                         <div className="w-1.5 h-1.5 rounded-full bg-highlight/60 group-hover:bg-highlight transition-colors"></div>
                         Marketing Services
                       </a>
                     </li>
                     <li>
-                      <a href="#services" className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
+                      <a href="#services" onClick={(e) => { e.preventDefault(); handleNavClick('#services'); }} className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
                         <div className="w-1.5 h-1.5 rounded-full bg-highlight/60 group-hover:bg-highlight transition-colors"></div>
                         Design & Printing
                       </a>
                     </li>
                     <li>
-                      <a href="#services" className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
+                      <a href="#services" onClick={(e) => { e.preventDefault(); handleNavClick('#services'); }} className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
                         <div className="w-1.5 h-1.5 rounded-full bg-highlight/60 group-hover:bg-highlight transition-colors"></div>
                         Events & Management
                       </a>
@@ -89,9 +139,21 @@ export default function Footer() {
                   <h5 className="font-semibold text-primary mb-4">Company</h5>
                   <ul className="space-y-3">
                     <li>
-                      <a href="/about-us" className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
+                      <a href="#about" onClick={(e) => { e.preventDefault(); handleNavClick('#about'); }} className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
                         <div className="w-1.5 h-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors"></div>
                         About Us
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#expertise" onClick={(e) => { e.preventDefault(); handleNavClick('#expertise'); }} className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors"></div>
+                        Our Expertise
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#our-work" onClick={(e) => { e.preventDefault(); handleNavClick('#our-work'); }} className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors"></div>
+                        Our Work
                       </a>
                     </li>
                     <li>
@@ -101,19 +163,13 @@ export default function Footer() {
                       </a>
                     </li>
                     <li>
-                      <a href="/our-offerings" className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors"></div>
-                        Our Offerings
-                      </a>
-                    </li>
-                    <li>
                       <a href="/clients" className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
                         <div className="w-1.5 h-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors"></div>
                         Our Clients
                       </a>
                     </li>
                     <li>
-                      <a href="/contact-us" className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
+                      <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavClick('#contact'); }} className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
                         <div className="w-1.5 h-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors"></div>
                         Contact Us
                       </a>

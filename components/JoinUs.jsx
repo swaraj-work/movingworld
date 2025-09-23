@@ -1,6 +1,6 @@
 export default function JoinUs() {
     return (
-        <section className="section bg-surface relative">
+        <section id="contact" className="section bg-surface relative">
             <div className="container-default">
                 <div className="flex flex-col gap-8 items-center">
                     {/* Join Us / Careers Section */}
