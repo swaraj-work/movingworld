@@ -5,19 +5,19 @@ export default function JoinUs() {
                 <div className="flex flex-col gap-8 items-center">
                     {/* Join Us / Careers Section */}
                     <div className="mx-auto max-w-4xl text-center">
-                        <h2 className="h2 text-primary mb-8">
+                        <h2 className="h2 text-primary mb-6">
                             Join Us / Careers
                         </h2>
-                        <div className="divider mb-8 mx-auto"></div>
+                        <div className="divider mb-6 mx-auto"></div>
 
-                        <p className="p-large leading-relaxed text-body mb-8">
+                        <p className="p-large leading-relaxed text-body mb-6">
                             We're always on the lookout for passionate{" "}
                             <span className="text-primary font-semibold">creators</span>,{" "}
                             <span className="text-plum font-semibold">strategists</span>, and{" "}
                             <span className="text-highlight font-semibold">innovators</span>{" "}
                             who believe in the power of storytelling.
                         </p>
-                        <p className="p-large leading-relaxed text-body mb-8">
+                        <p className="p-large leading-relaxed text-body mb-6">
                             If you're ready to move the world with your ideas, <strong>let's connect.</strong>
                         </p>
 
@@ -33,16 +33,16 @@ export default function JoinUs() {
 
                     {/* Contact Us Section */}
                     <div className="w-full max-w-6xl mx-auto">
-                        <div className="text-center mb-8">
-                            <h3 className="h2 text-primary mb-4">
+                        <div className="text-center mb-6">
+                            <h3 className="h2 text-primary mb-3">
                                 Contact Us
                             </h3>
                             {/* <div className="divider mx-auto"></div> */}
                         </div>
                         
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                             {/* Location */}
-                            <div className="bg-surface rounded-2xl p-4 sm:p-6 shadow-subtle border border-gray-100/50 hover-lift transition-all duration-300 h-full">
+                            <div className="bg-surface rounded-2xl p-3 sm:p-4 shadow-subtle border border-gray-100/50 hover-lift transition-all duration-300 h-full">
                                 <div className="flex flex-col items-center text-center space-y-3">
                                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                                         <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,7 +58,7 @@ export default function JoinUs() {
                             </div>
 
                             {/* Phone */}
-                            <div className="bg-surface rounded-2xl p-4 sm:p-6 shadow-subtle border border-gray-100/50 hover-lift transition-all duration-300 h-full">
+                            <div className="bg-surface rounded-2xl p-3 sm:p-4 shadow-subtle border border-gray-100/50 hover-lift transition-all duration-300 h-full">
                                 <div className="flex flex-col items-center text-center space-y-3">
                                     <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0">
                                         <svg className="w-6 h-6 text-plum" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,7 +80,7 @@ export default function JoinUs() {
                             </div>
 
                             {/* Email */}
-                            <div className="bg-surface rounded-2xl p-4 sm:p-6 shadow-subtle border border-gray-100/50 hover-lift transition-all duration-300 h-full">
+                            <div className="bg-surface rounded-2xl p-3 sm:p-4 shadow-subtle border border-gray-100/50 hover-lift transition-all duration-300 h-full">
                                 <div className="flex flex-col items-center text-center space-y-3">
                                     <div className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center flex-shrink-0">
                                         <svg className="w-6 h-6 text-highlight" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,7 +97,7 @@ export default function JoinUs() {
                             </div>
 
                             {/* Website */}
-                            <div className="bg-surface rounded-2xl p-4 sm:p-6 shadow-subtle border border-gray-100/50 hover-lift transition-all duration-300 h-full">
+                            <div className="bg-surface rounded-2xl p-3 sm:p-4 shadow-subtle border border-gray-100/50 hover-lift transition-all duration-300 h-full">
                                 <div className="flex flex-col items-center text-center space-y-3">
                                     <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
                                         <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">

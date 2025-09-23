@@ -57,19 +57,19 @@ export default function OurExpertise() {
       <div className="container-default">
         <div className="text-center max-w-4xl mx-auto">
           {/* Section Heading */}
-          <h2 className="h2 text-primary mb-8">
+          <h2 className="h2 text-primary mb-6">
             Our Expertise
           </h2>
-          <div className="divider mx-auto mb-8"></div>
+          <div className="divider mx-auto mb-6"></div>
 
           {/* Tagline */}
-          <p className="text-2xl sm:text-3xl font-heading text-primary italic mb-12">
+          <p className="text-xl sm:text-2xl font-heading text-primary italic mb-8">
             "We don't just create campaigns — we build{" "}
             <span className="gradient-text">movements</span>."
           </p>
 
           {/* Expertise Areas */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
             {expertise.map((item, index) => (
               <div key={index} className="card p-6 hover-lift interactive group text-center">
                 {/* Icon */}
@@ -88,7 +88,7 @@ export default function OurExpertise() {
           </div>
 
           {/* Strength Statement */}
-          <div className="bg-soft rounded-2xl p-8 shadow-subtle border border-gray-100/50">
+          <div className="bg-soft rounded-2xl p-6 shadow-subtle border border-gray-100/50">
             <p className="p-large leading-relaxed text-body text-center">
               Our strength lies in merging{" "}
               <span className="text-primary font-semibold">international experience</span>{" "}

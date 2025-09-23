@@ -51,11 +51,11 @@ export default function Gallery() {
         <section className="section bg-soft relative pt-24">
             <div className="container-default">
                 {/* Header */}
-                <div className="text-center max-w-4xl mx-auto mb-16 mt-10">
-                    <h1 className="h1 text-primary mb-8 font-heading">
+                <div className="text-center max-w-4xl mx-auto mb-10 mt-6">
+                    <h1 className="h1 text-primary mb-6 font-heading">
                         <span className="gradient-text">Gallery</span>
                     </h1>
-                    <div className="divider mx-auto mb-8"></div>
+                    <div className="divider mx-auto mb-6"></div>
 
                     <p className="p-large leading-relaxed text-body">
                         Explore our visual journey through{" "}
@@ -67,7 +67,7 @@ export default function Gallery() {
                 </div>
 
                 {/* Gallery Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
                     {currentImages.map((image) => (
                         <div
                             key={image.id}
@@ -92,23 +92,23 @@ export default function Gallery() {
                     ))}
                 </div>
 
-                {/* Load More Button */}
-                {hasMore && (
-                    <div className="text-center mb-16">
-                        <button
-                            onClick={loadMore}
-                            className="button-primary text-lg px-10 py-4 group button-smooth"
-                        >
-                            Load More Images
-                            <svg className="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                            </svg>
-                        </button>
-                        <p className="text-muted mt-4">
-                            Showing {currentImages.length} of {allImages.length} images
-                        </p>
-                    </div>
-                )}
+                    {/* Load More Button */}
+                    {hasMore && (
+                        <div className="text-center mb-10">
+                            <button
+                                onClick={loadMore}
+                                className="button-primary text-lg px-8 py-3 group button-smooth"
+                            >
+                                Load More Images
+                                <svg className="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                                </svg>
+                            </button>
+                            <p className="text-muted mt-3">
+                                Showing {currentImages.length} of {allImages.length} images
+                            </p>
+                        </div>
+                    )}
             </div>
 
             {/* Modal */}

@@ -6,7 +6,7 @@ export default function Hero() {
       {/* Carousel Section */}
       <section className="relative overflow-hidden lg:pt-20 pt-[4rem] overflow-x-hidden">
         <Carousel
-          className="w-full 2xl:h-[45rem] xl:h-[40rem] lg:h-[35rem] md:h-[25rem] sm:h-[20rem] h-[15rem]"
+          className="w-full 2xl:h-[65vh] xl:h-[65vh] lg:h-[60vh] md:h-[25rem] sm:h-[20rem] h-[15rem]"
           images={[
             "/crousel/1.jpeg",
             "/crousel/2.jpeg",
@@ -37,16 +37,16 @@ export default function Hero() {
             </div> */}
 
             {/* Main Heading with Brand Gradient */}
-            <h1 className="h1 mb-8 relative">
+            <h1 className="h1 mb-6 relative">
               <span className="block text-body font-heading mb-2">We Create and Nurture to</span>
-              <span className="block gradient-text font-heading text-5xl sm:text-6xl lg:text-7xl">
+              <span className="block gradient-text font-heading text-4xl sm:text-5xl lg:text-6xl">
                 Move the World
               </span>
-              <div className="divider mx-auto mt-6"></div>
+              <div className="divider mx-auto mt-4"></div>
             </h1>
 
             {/* Enhanced Description */}
-            <div className="space-y-6 mb-12">
+            <div className="space-y-4 mb-8">
               <p className="p-large max-w-4xl mx-auto leading-relaxed text-body">
                 At Moving World, we blend{" "}
                 <span className="text-primary font-semibold">creativity</span>,{" "}
@@ -54,13 +54,13 @@ export default function Hero() {
                 <span className="text-highlight font-semibold">strategy</span>{" "}
                 to transform ideas into powerful brand stories.
               </p>
-              <p className="text-lg text-muted max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base text-muted max-w-3xl mx-auto leading-relaxed">
                 From films and campaigns to digital experiences and live events, we help brands connect, inspire, and grow.
               </p>
             </div>
 
             {/* Enhanced CTA Section */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="/contact-us" className="button-accent text-lg px-10 py-4 group button-smooth shadow-glow-highlight">
                 Let's Build Your Story Together
                 <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -43,34 +43,77 @@ html, body, :root {
   overflow-x: hidden; /* Prevent Chrome horizontal scroll caused by 100vw differences */
 }
 
+/* Viewport optimization for standard resolutions */
+@media (max-width: 1366px) {
+  .container-default {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .container-default {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
 body {
   @apply antialiased;
   background: var(--color-surface);
   color: var(--color-body);
 }
 
-/* Layout helpers */
+/* Layout helpers - Optimized for standard screen resolutions */
 .container-default {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16;
+  /* Responsive container for all standard resolutions */
 }
 
 .section {
-  @apply py-16 sm:py-20 lg:py-28;
+  @apply py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32;
+  /* Optimized for standard viewport heights */
 }
 
-/* Type scale */
+/* Standard screen resolution optimizations */
+@media (min-width: 1366px) {
+  .container-default {
+    max-width: 1200px; /* Optimal for 1366x768 and 1440x900 */
+  }
+}
+
+@media (min-width: 1536px) {
+  .container-default {
+    max-width: 1400px; /* Optimal for 1536x864 */
+  }
+}
+
+@media (min-width: 1920px) {
+  .container-default {
+    max-width: 1600px; /* Optimal for 1920x1080 */
+  }
+}
+
+/* Type scale - Optimized for standard screen resolutions */
 .h1 {
-  @apply text-4xl sm:text-5xl lg:text-6xl leading-tight;
+  @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight;
   font-family: var(--font-heading);
   color: var(--color-primary);
 }
 .h2 {
-  @apply text-3xl sm:text-4xl lg:text-5xl;
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
   font-family: var(--font-heading);
   color: var(--color-body);
 }
 .p-large {
-  @apply text-lg sm:text-xl;
+  @apply text-base sm:text-lg md:text-xl lg:text-2xl;
   color: color-mix(in oklab, var(--color-body) 80%, white);
 }
 

@@ -86,13 +86,13 @@ export default function Services() {
       <div className="container-default">
         <div className="text-center max-w-4xl mx-auto">
           {/* Section Heading */}
-          <h2 className="h2 text-primary mb-8">
+          <h2 className="h2 text-primary mb-6">
             Our Services
           </h2>
-          <div className="divider mx-auto mb-8"></div>
+          <div className="divider mx-auto mb-6"></div>
 
           {/* Description */}
-          <p className="p-large leading-relaxed text-body mb-16">
+          <p className="p-large leading-relaxed text-body mb-10">
             We offer a complete suite of{" "}
             <span className="text-primary font-semibold">communication</span> and{" "}
             <span className="text-highlight font-semibold">marketing services</span>{" "}
@@ -100,7 +100,7 @@ export default function Services() {
           </p>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div key={index} className="card p-6 hover-lift interactive group">
                 {/* Icon */}

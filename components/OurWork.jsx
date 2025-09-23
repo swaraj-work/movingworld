@@ -10,13 +10,13 @@ export default function OurWork() {
         <section id="our-work" className="section bg-soft relative">
             <div className="container-default">
                 {/* Header */}
-                <div className="text-center max-w-4xl mx-auto mb-14">
-                    <h2 className="h2 text-primary mb-8">
+                <div className="text-center max-w-4xl mx-auto mb-10">
+                    <h2 className="h2 text-primary mb-6">
                         Our Work
                     </h2>
-                    <div className="divider mx-auto mb-8" />
+                    <div className="divider mx-auto mb-6" />
 
-                    <p className="p-large leading-relaxed text-body mb-8">
+                    <p className="p-large leading-relaxed text-body mb-6">
                         From{" "}
                         <span className="text-primary font-semibold">government ministries</span>{" "}
                         to global development projects, from{" "}
@@ -27,7 +27,7 @@ export default function OurWork() {
                     </p>
 
                     {/* Work Categories */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                         <div className="flex items-center gap-3 p-4 bg-soft rounded-xl border border-gray-100/50">
                             <span className="text-2xl">🎬</span>
                             <span className="text-body font-medium">Documentaries on environment and wildlife</span>

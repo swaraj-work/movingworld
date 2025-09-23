@@ -4,13 +4,13 @@ export default function AboutUsHome() {
       <div className="container-default">
         <div className="text-center max-w-4xl mx-auto">
           {/* Section Heading */}
-          <h2 className="h2 text-primary mb-8">
+          <h2 className="h2 text-primary mb-6">
             About Us
           </h2>
-          <div className="divider mx-auto mb-12"></div>
+          <div className="divider mx-auto mb-8"></div>
 
           {/* Content */}
-          <div className="space-y-8 text-left">
+          <div className="space-y-6 text-left">
             <p className="p-large leading-relaxed text-body">
               At the heart of Moving World lies a passionate team of{" "}
               <span className="text-primary font-semibold">creators</span>,{" "}
@@ -23,11 +23,11 @@ export default function AboutUsHome() {
               We believe creativity is only valuable when it delivers results. That's why we design campaigns that not only capture attention but also foster growth, strengthen reputation, and create long-lasting impact.
             </p>
 
-            <div className="text-center py-8">
-              <p className="text-xl sm:text-2xl font-heading text-primary italic">
+            <div className="text-center py-6">
+              <p className="text-lg sm:text-xl font-heading text-primary italic">
                 "Your vision becomes our <span className="gradient-text">approach</span>."
               </p>
-              <div className="w-16 h-0.5 bg-highlight mx-auto mt-4"></div>
+              <div className="w-16 h-0.5 bg-highlight mx-auto mt-3"></div>
             </div>
           </div>
 

@@ -6,8 +6,8 @@ export const metadata = {
 const team = [
     {
         name: "Dr. Anand A. Jha",
-        role: "Managing Director & Proprietor, Moving World",
-        phone: "+91 9910017177",
+        role: "Managing Director & Proprietor",
+        // phone: "+91 9910017177",
         image:
             "/team/anand-anjani-jha.jpeg",
         blurb: [
@@ -19,8 +19,8 @@ const team = [
     },
     {
         name: "Swaranjeet Singh Sidhu",
-        role: "Chief Brand & Strategy Officer, Moving World",
-        phone: "+91 9815250009",
+        role: "Chief Brand & Strategy Officer",
+        // phone: "+91 9815250009",
         image:
             "/team/swaranjeet-sidhu.jpeg",
         blurb: [
@@ -32,8 +32,8 @@ const team = [
     },
     {
         name: "Dr. Surraj Das",
-        role: "Director – Creative Strategy & Global Partnerships, Moving World",
-        phone: "+91 9643397846",
+        role: "Director – Creative Strategy & Global Partnerships",
+        // phone: "+91 9643397846",
         image:
             "/team/surraj-das.jpeg",
         blurb: [
@@ -122,12 +122,12 @@ export default function OurTeamPage() {
                                             <div className="mt-6 space-y-4">
                                                 {/* Contact Information */}
                                                 <div className="flex flex-wrap items-center gap-4">
-                                                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/5 text-primary border border-primary/10">
+                                                    {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/5 text-primary border border-primary/10">
                                                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                             <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3l2 4-3 3a16 16 0 007 7l3-3 4 2v3a2 2 0 01-2 2h-1C8.82 22 2 15.18 2 6V5z" />
                                                         </svg>
                                                         <span className="font-medium text-sm">{member.phone}</span>
-                                                    </div>
+                                                    </div> */}
 
                                                     {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 border border-blue-100">
                                                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
