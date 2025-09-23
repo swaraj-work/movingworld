@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <>
       {/* Carousel Section */}
-      <section id="home" className="relative overflow-hidden lg:pt-20 pt-[4rem] overflow-x-hidden">
+      <section id="home" className="relative overflow-hidden lg:pt-20 pt-[4rem] overflow-x-hidden" style={{ scrollMarginTop: '120px' }}>
         <Carousel
           className="w-full 2xl:h-[65vh] xl:h-[65vh] lg:h-[60vh] md:h-[25rem] sm:h-[20rem] h-[15rem]"
           images={[

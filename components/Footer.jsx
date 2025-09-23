@@ -2,26 +2,12 @@
 
 export default function Footer() {
   const scrollToElement = (element) => {
-    // Get the actual navbar height by measuring it
-    const navbar = document.querySelector('header');
-    const navbarHeight = navbar ? navbar.offsetHeight : (window.innerWidth < 1024 ? 80 : 100);
-    
-    // Use scrollIntoView with proper options
+    // Use native scrollIntoView with scroll-margin-top CSS
     element.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
       inline: 'nearest'
     });
-    
-    // Then adjust for navbar height
-    setTimeout(() => {
-      const currentScroll = window.pageYOffset;
-      const newScroll = currentScroll - navbarHeight - 20;
-      window.scrollTo({
-        top: Math.max(0, newScroll),
-        behavior: 'smooth'
-      });
-    }, 100);
   };
 
   const handleNavClick = (href) => {
