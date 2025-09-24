@@ -82,7 +82,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="section bg-soft relative" style={{ scrollMarginTop: '120px' }}>
+    <section id="services" className="section bg-soft relative" style={{ scrollMarginTop: 'clamp(80px, 8vw, 120px)' }}>
       <div className="container-default">
         <div className="text-center max-w-4xl mx-auto">
           {/* Section Heading */}

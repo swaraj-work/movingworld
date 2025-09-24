@@ -70,7 +70,7 @@ export default function Navbar() {
       return;
     }
     
-    // Use native scrollIntoView with scroll-margin-top CSS
+    // Simple and reliable approach using scrollIntoView with CSS scroll-margin-top
     element.scrollIntoView({
       behavior: 'smooth',
       block: 'start',

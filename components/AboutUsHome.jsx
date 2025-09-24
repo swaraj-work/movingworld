@@ -1,6 +1,6 @@
 export default function AboutUsHome() {
   return (
-    <section id="about" className="section bg-surface relative" style={{ scrollMarginTop: '120px' }}>
+    <section id="about" className="sectclion bg-surface relative" style={{ scrollMarginTop: 'clamp(80px, 8vw, 120px)' }}>
       <div className="container-default">
         <div className="text-center max-w-4xl mx-auto">
           {/* Section Heading */}

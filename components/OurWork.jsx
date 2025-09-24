@@ -7,7 +7,7 @@ export default function OurWork() {
     const [isPlaying, setIsPlaying] = useState(false);
 
     return (
-        <section id="our-work" className="section bg-soft relative">
+        <section id="our-work" className="section bg-soft relative" style={{ scrollMarginTop: 'clamp(80px, 8vw, 120px)' }}>
             <div className="container-default">
                 {/* Header */}
                 <div className="text-center max-w-4xl mx-auto mb-10">
