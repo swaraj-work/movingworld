@@ -109,13 +109,19 @@ export default function Footer() {
                     <li>
                       <a href="#services" onClick={(e) => { e.preventDefault(); handleNavClick('#services'); }} className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
                         <div className="w-1.5 h-1.5 rounded-full bg-highlight/60 group-hover:bg-highlight transition-colors"></div>
-                        Design & Printing
+                        Events & Management
                       </a>
                     </li>
                     <li>
                       <a href="#services" onClick={(e) => { e.preventDefault(); handleNavClick('#services'); }} className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
                         <div className="w-1.5 h-1.5 rounded-full bg-highlight/60 group-hover:bg-highlight transition-colors"></div>
-                        Events & Management
+                        Film & Advertising Productions
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#services" onClick={(e) => { e.preventDefault(); handleNavClick('#services'); }} className="text-body/70 hover:text-primary transition-colors flex items-center gap-2 group text-sm">
+                        <div className="w-1.5 h-1.5 rounded-full bg-highlight/60 group-hover:bg-highlight transition-colors"></div>
+                        Design & Printing
                       </a>
                     </li>
                   </ul>
