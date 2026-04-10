@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 export default function Carousel({ images = [], interval = 4000, className = "" }) {
   const [index, setIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [isMdAndAbove, setIsMdAndAbove] = useState(false);
   const timerRef = useRef(null);
 
   useEffect(() => {
@@ -15,17 +15,6 @@ export default function Carousel({ images = [], interval = 4000, className = "" 
     }, interval);
     return () => clearInterval(timerRef.current);
   }, [images.length, interval, isPlaying]);
-
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMdAndAbove(window.innerWidth >= 768);
-    };
-    
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
 
   const goTo = (i) => {
     setIndex(i % images.length);
@@ -51,19 +40,20 @@ export default function Carousel({ images = [], interval = 4000, className = "" 
       onMouseLeave={() => setIsPlaying(true)}
     >
       <div
-        className="flex transition-transform duration-700 ease-in-out"
+        className="flex transition-transform duration-1000 ease-out h-full"
         style={{ transform: `translateX(-${index * 100}%)` }}
       >
         {images.map((src, i) => (
           <div key={i} className="min-w-full h-full relative overflow-hidden">
-            <img
+            <Image
               src={src}
               alt={`Brand experience showcase ${i + 1}`}
-              className="inset-0 w-full h-full object-cover"
-              style={{ 
-                objectPosition: isMdAndAbove ? `0vw ${i == 1 ? '-10vh' : '0vh'}` : 'center center'
-              }}
-              loading={i === 0 ? "eager" : "lazy"}
+              fill
+              className={`object-cover transition-transform duration-[10000ms] ease-linear ${
+                i === 0 ? "object-top" : "object-center"
+              } ${i === index ? "scale-110" : "scale-100"}`}
+              priority={i === 0}
+              sizes="100vw"
             />
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30" />

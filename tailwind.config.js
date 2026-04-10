@@ -7,39 +7,39 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        // Standard screen resolution breakpoints
-        'xs': '480px',      // Small phones
-        'sm': '640px',      // Large phones
-        'md': '768px',      // Tablets
-        'lg': '1024px',     // Small laptops
-        'xl': '1280px',     // Large laptops
-        '2xl': '1536px',    // Desktop monitors
-        '3xl': '1920px',    // Full HD monitors
-        '4xl': '2560px',    // 2K monitors
-        // Specific standard resolutions
-        '1366': '1366px',   // Common laptop resolution
-        '1440': '1440px',   // MacBook Air resolution
-        '1536': '1536px',   // Surface Pro resolution
-        '1920': '1920px',   // Full HD resolution
+        'xs': '480px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+        '1366': '1366px',
+        '1440': '1440px',
+        '1920': '1920px',
       },
       colors: {
-        primary: "#1A237E", // Deep blue
-        highlight: "#FF6F00", // Vibrant orange
-        accent: "#F9A825", // Warm gold
-        body: "#212121", // Charcoal gray
-        soft: "#F5F5F5", // Soft gray
+        primary: "#A4306D",   // Moving World burgundy
+        highlight: "#FFB800", // Moving World golden yellow
+        accent: "#FFCA28",    // Lighter gold
+        plum: "#7E1B4B",      // Deeper burgundy
+        body: "#0F172A",      // Dark slate for text
+        muted: "#475569",     // Muted slate
+        surface: "#FFFFFF",
+        "surface-2": "#F8FAFC",
       },
       fontFamily: {
-        heading: ["var(--font-heading)"], // Serif for headings
-        body: ["var(--font-body)"], // Sans-serif for body
+        heading: ["var(--font-heading)"],
+        body: ["var(--font-body)"],
       },
       boxShadow: {
-        subtle: "0 10px 30px rgba(26,35,126,0.08)",
+        subtle: "0 10px 30px rgba(164, 48, 109, 0.08)",
+        soft: "0 4px 6px -1px rgb(0 0 0 / 0.05)",
+        premium: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
       },
       maxWidth: {
-        '8xl': '88rem',     // 1408px - optimal for 1440px screens
-        '9xl': '96rem',     // 1536px - optimal for 1536px screens
-        '10xl': '112rem',   // 1792px - optimal for 1920px screens
+        '8xl': '88rem',
+        '9xl': '96rem',
+        '10xl': '112rem',
       },
     },
   },

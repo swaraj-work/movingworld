@@ -1,15 +1,13 @@
-export const metadata = {
-    title: "Our Team | Moving World",
-    description: "Meet the leadership team behind Moving World",
-};
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const team = [
     {
         name: "Dr. Anand A. Jha",
         role: "Managing Director & Proprietor",
-        // phone: "+91 9910017177",
-        image:
-            "/team/anand-anjani-jha.jpeg",
+        image: "/team/anand-anjani-jha.jpeg",
         blurb: [
             "Dr. Anand A. Jha is the Managing Director and Proprietor of Moving World, bringing with him over two decades of experience across academia, media, development, and cultural initiatives.",
             "A PhD in Library & Information Science, he has combined his expertise in knowledge management, content creation, video production, and publishing with his passion for global storytelling and cultural exchange.",
@@ -20,9 +18,7 @@ const team = [
     {
         name: "Swaranjeet Singh Sidhu",
         role: "Chief Brand & Strategy Officer",
-        // phone: "+91 9815250009",
-        image:
-            "/team/swaranjeet-sidhu.jpeg",
+        image: "/team/swaranjeet-sidhu.jpeg",
         blurb: [
             "Swaranjeet Singh Sidhu is a strategic brand leader, edu-innovator, and entrepreneur with over 15 years of experience in branding, marketing, PR, and communication.",
             "He has spearheaded integrated marketing strategies, ATL/BTL campaigns, PR initiatives, celebrity-driven events, and digital outreach for leading institutions and ventures.",
@@ -33,9 +29,7 @@ const team = [
     {
         name: "Dr. Surraj Das",
         role: "Director – Creative Strategy & Global Partnerships",
-        // phone: "+91 9643397846",
-        image:
-            "/team/surraj-das.jpeg",
+        image: "/team/surraj-das.jpeg",
         blurb: [
             "Dr. Surraj Das brings a rare confluence of management acumen and creative leadership to Moving World. A PhD in Management specializing in the globalization of popular culture (Hollywood vs. Bollywood), he has spent over a decade navigating the intersections of film, media, events, and cultural diplomacy.",
             "He has curated and managed international film festivals—including collaborations with the Canadian Embassy, UNDP, GIZ (German Embassy), and NETPAC Asia—and contributed as a director, producer, and creative strategist in the Indian film industry.",
@@ -45,20 +39,40 @@ const team = [
     },
 ];
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            ease: "easeOut"
+        }
+    }
+};
+
 export default function OurTeamPage() {
     return (
-        <main>
+        <main className="overflow-x-hidden">
             {/* Hero */}
-            <section className="relative top-10 overflow-hidden bg-soft text-body overflow-x-hidden overflow-y-visible">
-                <div className="container-default section">
+            <section className="relative pt-32 pb-16 bg-soft text-body overflow-visible">
+                <motion.div 
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="container-default"
+                >
                     <div className="max-w-3xl">
-                        {/* <div className="badge-gold mb-5 text-accent bg-white/10">
-                            Leadership Team Details
-                        </div>
-                        <h1 className="h1 text-primary">
-                            People behind the
-                            <span className="block gradient-text py-2">Moving World</span>
-                        </h1> */}
                         <h1 className="h1 text-primary">
                             <span className="block gradient-text py-2">Leadership Team Details</span>
                         </h1>
@@ -67,105 +81,82 @@ export default function OurTeamPage() {
                             cultural insight to build meaningful brand experiences.
                         </p>
                     </div>
-                </div>
-
-
+                </motion.div>
             </section>
 
-            {/* Decorative shape */}
-            <div
-                aria-hidden="true"
-                className="absolute top-46 right-2 w-80 h-80 bg-highlight/20 rounded-full blur-3xl"
-            />
-
             {/* Team Feature Rows */}
-            <section className="section bg-soft">
+            <section className="section bg-soft relative">
+                {/* Decorative shape */}
+                <div
+                    aria-hidden="true"
+                    className="absolute top-0 right-0 w-96 h-96 bg-highlight/10 rounded-full blur-3xl -z-10"
+                />
+                
                 <div className="container-default">
-                    <div className="space-y-12 lg:space-y-16">
+                    <motion.div 
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-100px" }}
+                        className="space-y-12 lg:space-y-16"
+                    >
                         {team.map((member, idx) => {
                             return (
-                                <article
+                                <motion.article
                                     key={member.name}
-                                    className={`relative rounded-3xl border border-gray-100 bg-white shadow-subtle overflow-hidden hover-lift interactive`}
+                                    variants={itemVariants}
+                                    className={`relative rounded-3xl border border-gray-100 bg-white shadow-subtle overflow-hidden hover-lift interactive group`}
                                 >
                                     {/* Accent background shapes */}
-                                    <div className="pointer-events-none absolute -top-10 -left-10 w-56 h-56 rounded-full bg-primary/5 blur-3xl" />
-                                    <div className="pointer-events-none absolute -bottom-10 -right-10 w-56 h-56 rounded-full bg-highlight/10 blur-3xl" />
+                                    <div className="pointer-events-none absolute -top-10 -left-10 w-56 h-56 rounded-full bg-primary/5 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+                                    <div className="pointer-events-none absolute -bottom-10 -right-10 w-56 h-56 rounded-full bg-highlight/10 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
 
-                                    <div className={`relative grid lg:grid-cols-[2fr_3fr] md:grid-cols-[1fr_2fr] gap-0`}>
+                                    <div className="relative grid lg:grid-cols-[2fr_3fr] gap-0">
                                         {/* Visual Panel */}
-                                        <div className={`relative md:my-auto md:mx-3 lg:mx-0 h-72 sm:h-80 lg:h-full min-h-[18rem] bg-surface`}>
-                                            <div className="absolute inset-0">
-                                                <img
-                                                    src={member.image}
-                                                    alt={`${member.name} portrait`}
-                                                    className={`h-full w-full ${idx === 0 ? "object-center" : "object-top"} object-cover md:rounded-xl`}
-                                                    loading="lazy"
-                                                />
-                                            </div>
-                                            {/* Gradient scrim + framing */}
-                                            {/* <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" /> */}
-                                            <div className="absolute inset-4 rounded-2xl ring-1 ring-white/30" />
+                                        <div className="relative h-72 sm:h-80 lg:h-full lg:min-h-[32rem] overflow-hidden">
+                                            <Image
+                                                src={member.image}
+                                                alt={`${member.name} portrait`}
+                                                fill
+                                                className={`object-cover ${idx === 0 ? "object-center" : "object-top"} transition-transform duration-700 group-hover:scale-110`}
+                                                loading={idx === 0 ? "eager" : "lazy"}
+                                                priority={idx === 0}
+                                                sizes="(max-width: 1024px) 100vw, 40vw"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                         </div>
 
                                         {/* Content Panel */}
-                                        <div className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-center animate-fade-in-up`}>
-                                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold w-fit mb-4">
+                                        <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-center">
+                                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold w-fit mb-6 tracking-wider uppercase">
                                                 {member.role}
                                             </div>
-                                            <h3 className="text-3xl font-bold text-primary mb-2">{member.name}</h3>
-                                            <div className="space-y-3 text-body/80 leading-relaxed">
+                                            <h3 className="text-3xl sm:text-4xl font-bold text-primary mb-6">{member.name}</h3>
+                                            <div className="space-y-4 text-body/80 leading-relaxed">
                                                 {member.blurb.map((para, i) => (
-                                                    <p key={i} className="text-sm sm:text-base">{para}</p>
+                                                    <p key={i} className="text-base sm:text-lg">{para}</p>
                                                 ))}
                                             </div>
-                                            <div className="mt-6 space-y-4">
-                                                {/* Contact Information */}
-                                                <div className="flex flex-wrap items-center gap-4">
-                                                    {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/5 text-primary border border-primary/10">
-                                                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3l2 4-3 3a16 16 0 007 7l3-3 4 2v3a2 2 0 01-2 2h-1C8.82 22 2 15.18 2 6V5z" />
-                                                        </svg>
-                                                        <span className="font-medium text-sm">{member.phone}</span>
-                                                    </div> */}
-
-                                                    {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 border border-blue-100">
-                                                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
-                                                        </svg>
-                                                        <span className="font-medium text-sm">{member.email}</span>
-                                                    </div> */}
-                                                </div>
-
-                                                {/* Expertise Tags */}
-                                                <div className="flex flex-wrap items-center gap-2">
-                                                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium">
-                                                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                                        </svg>
+                                            
+                                            <div className="mt-10 pt-8 border-t border-gray-100">
+                                                <div className="flex flex-wrap items-center gap-3">
+                                                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 text-primary text-sm font-semibold border border-primary/10">
                                                         Strategy
                                                     </span>
-                                                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-50 text-purple-700 text-sm font-medium">
-                                                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 4v10a2 2 0 002 2h6a2 2 0 002-2V8M9 8h6" />
-                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6" />
-                                                        </svg>
+                                                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-plum/5 text-plum text-sm font-semibold border border-plum/10">
                                                         Media
                                                     </span>
-                                                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-sm font-medium">
-                                                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                                        </svg>
+                                                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-highlight/5 text-highlight text-sm font-semibold border border-highlight/10">
                                                         Culture
                                                     </span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </article>
+                                </motion.article>
                             );
                         })}
-                    </div>
+                    </motion.div>
                 </div>
             </section>
         </main>

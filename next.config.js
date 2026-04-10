@@ -5,8 +5,16 @@ const nextConfig = {
   output: 'export',
   // Ensures routes like /about-us resolve to out/about-us/index.html on static hosts
   trailingSlash: true,
-  // If next/image is used anywhere, disable optimization for static export
-  images: { unoptimized: true },
+  images: { 
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+        pathname: '/**',
+      },
+    ],
+  },
   experimental: {
     optimizePackageImports: [],
   },

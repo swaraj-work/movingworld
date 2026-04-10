@@ -1,6 +1,6 @@
 "use client";
-
 import { useState } from "react";
+import Image from "next/image";
 import { ExternalLink, Calendar, Users, Award, Play } from "lucide-react";
 
 export default function OurWork() {
@@ -63,11 +63,12 @@ export default function OurWork() {
                                     className="absolute inset-0 w-full h-full"
                                     aria-label="Play video"
                                 >
-                                    <img
+                                    <Image
                                         src="https://img.youtube.com/vi/OgUxdLdX3BM/hqdefault.jpg"
                                         alt="Community Nutrition Gardens for Food Security video thumbnail"
-                                        className="w-full h-full object-cover"
-                                        loading="lazy"
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 1024px) 100vw, 50vw"
                                     />
                                     <span className="absolute inset-0 bg-black/20" />
                                     <span className="absolute inset-0 flex items-center justify-center">
@@ -144,8 +145,14 @@ export default function OurWork() {
                             </div>
                         </div>
                     </div>
-                    <div className="relative group overflow-hidden rounded-3xl bg-white border border-gray-100 shadow-subtle my-auto">
-                        <img src="/our-work/webinar.jpg" alt="Event Image" className="w-full h-auto object-cover rounded-3xl" />
+                    <div className="relative group overflow-hidden rounded-3xl bg-white border border-gray-100 shadow-subtle my-auto aspect-video">
+                        <Image
+                            src="/our-work/webinar.jpg"
+                            alt="Event Image"
+                            fill
+                            className="object-cover rounded-3xl"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                        />
                     </div>
                 </div>
 
@@ -153,14 +160,16 @@ export default function OurWork() {
                 <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-subtle grid lg:grid-cols-2 gap-8 mb-16">
                     
                     {/* Sample Booklets with Images */}
-                    <div className="grid grid-cols-2 gap-8 max-w-2xl mx-auto">
+                    <div className="grid grid-cols-2 gap-8 max-w-2xl mx-auto w-full">
                         {/* My Book of Green Good Deeds */}
                         <div className="group relative">
-                            <div className="aspect-[3/4] rounded-2xl overflow-hidden border border-gray-200 shadow-lg group-hover:shadow-xl transition-all duration-300">
-                                <img
+                            <div className="aspect-[3/4] rounded-2xl overflow-hidden border border-gray-200 shadow-lg group-hover:shadow-xl transition-all duration-300 relative">
+                                <Image
                                     src="/booklets/green-good-deeds.png"
                                     alt="My Book of Green Good Deeds - Environmental Education Booklet"
-                                    className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                                    fill
+                                    className="object-contain group-hover:scale-105 transition-transform duration-300"
+                                    sizes="(max-width: 768px) 50vw, 25vw"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                 <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -172,11 +181,13 @@ export default function OurWork() {
 
                         {/* Animal Workbook */}
                         <div className="group relative">
-                            <div className="aspect-[3/4] rounded-2xl overflow-hidden border border-gray-200 shadow-lg group-hover:shadow-xl transition-all duration-300">
-                                <img
+                            <div className="aspect-[3/4] rounded-2xl overflow-hidden border border-gray-200 shadow-lg group-hover:shadow-xl transition-all duration-300 relative">
+                                <Image
                                     src="/booklets/animal-workbook.png"
                                     alt="Animal Workbook - Wildlife Education Booklet"
-                                    className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                                    fill
+                                    className="object-contain group-hover:scale-105 transition-transform duration-300"
+                                    sizes="(max-width: 768px) 50vw, 25vw"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                 <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
