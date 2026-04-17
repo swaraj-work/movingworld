@@ -4,11 +4,8 @@ import { motion } from "framer-motion";
 export default function AboutUsHome() {
   return (
     <section id="about" className="section bg-surface relative overflow-hidden" style={{ scrollMarginTop: 'clamp(80px, 8vw, 120px)' }}>
-      {/* Background Decoration */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      
       <div className="container-default relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -23,7 +20,7 @@ export default function AboutUsHome() {
 
           {/* Content */}
           <div className="space-y-8 text-left">
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -37,7 +34,7 @@ export default function AboutUsHome() {
               united by one vision — to move people, communities, and businesses with meaningful ideas.
             </motion.p>
 
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -47,7 +44,7 @@ export default function AboutUsHome() {
               We believe creativity is only valuable when it delivers results. That's why we design campaigns that not only capture attention but also foster growth, strengthen reputation, and create long-lasting impact.
             </motion.p>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}

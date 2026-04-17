@@ -128,16 +128,14 @@ export default function Services() {
   return (
     <section id="services" className="section bg-soft relative overflow-hidden" style={{ scrollMarginTop: 'clamp(80px, 8vw, 120px)' }}>
       {/* Background patterns */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-highlight/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
       <div className="container-default relative z-10">
-        <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-4xl mx-auto"
         >
           {/* Section Heading */}
           <h2 className="h2 text-primary mb-6"> Our Services </h2>
@@ -153,21 +151,20 @@ export default function Services() {
         </motion.div>
 
         {/* Services Grid */}
-        <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {services.map((service, index) => (
-            <motion.div 
-                key={index}
-                variants={itemVariants}
-                className="group relative bg-white rounded-3xl p-8 shadow-subtle border border-gray-100/50 hover:shadow-2xl hover:border-primary/20 transition-all duration-500 hover-lift interactive overflow-hidden"
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="group relative bg-white rounded-3xl p-8 shadow-subtle border border-gray-100/50 hover:shadow-2xl hover:border-primary/20 transition-all duration-500 hover-lift interactive overflow-hidden"
             >
               {/* Background Glow */}
-              <div className={`absolute -right-4 -bottom-4 w-24 h-24 rounded-full ${service.bg} blur-2xl group-hover:scale-150 transition-transform duration-500 opacity-50`} />
 
               {/* Icon */}
               <div className={`w-16 h-16 rounded-2xl ${service.bg} flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary transition-all duration-500`}>

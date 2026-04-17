@@ -26,9 +26,6 @@ export default function JoinUs() {
 
     return (
         <section id="contact" className="section bg-soft relative overflow-hidden" style={{ scrollMarginTop: 'clamp(80px, 8vw, 120px)' }}>
-            {/* Background Decoration */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.01)_0,transparent_70%)] pointer-events-none" />
-            
             <div className="container-default relative z-10">
                 <div className="flex flex-col gap-16 items-center">
                     {/* Join Us / Careers Section */}
@@ -99,8 +96,8 @@ export default function JoinUs() {
                                     <div>
                                         <h4 className="font-bold text-plum mb-3 text-lg">Phone</h4>
                                         <div className="space-y-1">
-                                            <a href="tel:+919910017177" className="block text-muted hover:text-plum transition-colors font-medium"> +91 9910017177 </a>
-                                            <a href="tel:+918510017177" className="block text-muted hover:text-plum transition-colors font-medium"> +91 8510017177 </a>
+                                            <a href="tel:+919910017177" className="block text-muted hover:text-plum transition-colors font-medium"> +91 99100 17177 </a>
+                                            <a href="tel:+918510017177" className="block text-muted hover:text-plum transition-colors font-medium"> +91 85100 17177 </a>
                                         </div>
                                     </div>
                                 </div>

@@ -34,7 +34,7 @@ export default function Carousel({ images = [], interval = 4000, className = "" 
   if (!images || images.length === 0) return null;
 
   return (
-    <div 
+    <div
       className={`relative w-full overflow-hidden group ${className}`}
       onMouseEnter={() => setIsPlaying(false)}
       onMouseLeave={() => setIsPlaying(true)}
@@ -50,7 +50,7 @@ export default function Carousel({ images = [], interval = 4000, className = "" 
               alt={`Brand experience showcase ${i + 1}`}
               fill
               className={`object-cover transition-transform duration-[10000ms] ease-linear ${
-                i === 0 ? "object-top" : "object-center"
+                i === 0 ? "object-top" : (i === 2 || i === 3) ? "object-center lg:object-top" : "object-center"
               } ${i === index ? "scale-110" : "scale-100"}`}
               priority={i === 0}
               sizes="100vw"
@@ -61,7 +61,7 @@ export default function Carousel({ images = [], interval = 4000, className = "" 
         ))}
       </div>
 
-      {/* Enhanced Controls */} 
+      {/* Enhanced Controls */}
       {images.length > 1 && (
         <>
           <button
@@ -73,7 +73,7 @@ export default function Carousel({ images = [], interval = 4000, className = "" 
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          
+
           <button
             aria-label="Next slide"
             onClick={next}
@@ -108,11 +108,10 @@ export default function Carousel({ images = [], interval = 4000, className = "" 
                 key={i}
                 aria-label={`Go to slide ${i + 1}`}
                 onClick={() => goTo(i)}
-                className={`relative transition-all duration-300 ${
-                  i === index 
-                    ? "w-8 h-3 bg-white rounded-full" 
+                className={`relative transition-all duration-300 ${i === index
+                    ? "w-8 h-3 bg-white rounded-full"
                     : "w-3 h-3 bg-white/60 hover:bg-white/80 rounded-full hover:scale-110"
-                }`}
+                  }`}
               >
                 {i === index && (
                   <div className="absolute inset-0 bg-white rounded-full animate-pulse" />

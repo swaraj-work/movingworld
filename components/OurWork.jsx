@@ -158,7 +158,7 @@ export default function OurWork() {
 
                 {/* 3. Publications Showcase */}
                 <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-subtle grid lg:grid-cols-2 gap-8 mb-16">
-                    
+
                     {/* Sample Booklets with Images */}
                     <div className="grid grid-cols-2 gap-8 max-w-2xl mx-auto w-full">
                         {/* My Book of Green Good Deeds */}

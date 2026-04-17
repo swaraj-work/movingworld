@@ -14,21 +14,34 @@
   --font-body: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
 
   /* Core colors - Moving World Brand */
-  --color-primary: #A4306D;     /* Moving World burgundy/maroon */
-  --color-highlight: #FFB800;   /* Moving World golden yellow */
-  --color-accent: #FFCA28;      /* lighter gold accent */
-  --color-plum: #7E1B4B;        /* deeper burgundy */
-  --color-plum-700: #5E1438;    /* darkest burgundy for emphasis */
-  --color-purple-1: #A4306D;    /* main burgundy (vision bg start) */
-  --color-purple-2: #7E1B4B;    /* mid burgundy (vision bg mid) */
-  --color-purple-3: #5E1438;    /* dark burgundy (vision bg end) */
-  --color-body: #0F172A;        /* slate-900 for body copy */
-  --color-muted: #475569;       /* slate-600 for secondary text */
+  --color-primary: #A4306D;
+  /* Moving World burgundy/maroon */
+  --color-highlight: #FFB800;
+  /* Moving World golden yellow */
+  --color-accent: #FFCA28;
+  /* lighter gold accent */
+  --color-plum: #7E1B4B;
+  /* deeper burgundy */
+  --color-plum-700: #5E1438;
+  /* darkest burgundy for emphasis */
+  --color-purple-1: #A4306D;
+  /* main burgundy (vision bg start) */
+  --color-purple-2: #7E1B4B;
+  /* mid burgundy (vision bg mid) */
+  --color-purple-3: #5E1438;
+  /* dark burgundy (vision bg end) */
+  --color-body: #0F172A;
+  /* slate-900 for body copy */
+  --color-muted: #475569;
+  /* slate-600 for secondary text */
 
   /* Surfaces */
-  --color-surface: #FFFFFF;     /* base surface */
-  --color-surface-2: #F8FAFC;   /* slate-50 background */
-  --color-soft: #F1F5F9;        /* slate-100 background */
+  --color-surface: #FFFFFF;
+  /* base surface */
+  --color-surface-2: #F8FAFC;
+  /* slate-50 background */
+  --color-soft: #F1F5F9;
+  /* slate-100 background */
 
   /* Shadows */
   --shadow-subtle: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -42,7 +55,9 @@
   color: white;
 }
 
-html, body, :root {
+html,
+body,
+:root {
   height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -113,23 +128,65 @@ body {
 
 /* Utilities */
 @layer utilities {
-  .text-body { color: var(--color-body); }
-  .text-muted { color: var(--color-muted); }
-  .text-primary { color: var(--color-primary); }
-  .text-plum { color: var(--color-plum); }
-  .text-highlight { color: var(--color-highlight); }
-  .text-accent { color: var(--color-accent); }
+  .text-body {
+    color: var(--color-body);
+  }
 
-  .bg-primary { background-color: var(--color-primary); }
-  .bg-highlight { background-color: var(--color-highlight); }
-  .bg-accent { background-color: var(--color-accent); }
-  .bg-surface { background-color: var(--color-surface); }
-  .bg-surface-2 { background-color: var(--color-surface-2); }
-  .bg-soft { background-color: var(--color-soft); }
+  .text-muted {
+    color: var(--color-muted);
+  }
 
-  .shadow-soft { box-shadow: var(--shadow-subtle); }
-  .shadow-premium { box-shadow: var(--shadow-premium); }
-  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .text-primary {
+    color: var(--color-primary);
+  }
+
+  .text-plum {
+    color: var(--color-plum);
+  }
+
+  .text-highlight {
+    color: var(--color-highlight);
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .bg-highlight {
+    background-color: var(--color-highlight);
+  }
+
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
+
+  .bg-surface {
+    background-color: var(--color-surface);
+  }
+
+  .bg-surface-2 {
+    background-color: var(--color-surface-2);
+  }
+
+  .bg-soft {
+    background-color: var(--color-soft);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
 
   .divider {
     @apply h-1.5 w-24 rounded-full;
@@ -192,6 +249,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -201,4 +259,3 @@ body {
 .animate-reveal {
   animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-

@@ -46,7 +46,7 @@ export default function Hero() {
       {/* Hero Content Section */}
       <section className="section bg-soft relative overflow-hidden">
         <div className="container-default relative z-10">
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -58,7 +58,7 @@ export default function Hero() {
               <span className="block gradient-text font-heading text-5xl sm:text-7xl lg:text-8xl py-2">
                 Move the World
               </span>
-              <motion.div 
+              <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: '100px' }}
                 transition={{ duration: 1, delay: 0.8 }}
@@ -91,10 +91,6 @@ export default function Hero() {
             </motion.div>
           </motion.div>
         </div>
-        
-        {/* Background glow effects */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-highlight/5 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2 pointer-events-none" />
       </section>
     </>
   );
